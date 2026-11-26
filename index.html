@@ -3,6 +3,9 @@
 <html dir="rtl" lang="ar">
 <head>
 <meta charset="utf-8"/>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; script-src 'self' https://cdnjs.cloudflare.com 'sha256-Jm5+zucSh3o55tV5g0/YSDVcQKjIHK4Aa5+eFqz2qrg=' 'sha256-eqzNS5BsIX1Pucir2IfOcwe3S2DLUNqYpISq0lHNroU=' 'sha256-qED+RlKXfSF4ZD2vG+Eg0BGJiacwOX8/y/rMLG6hm3M=' 'sha256-88evrgXa2U1h683dz3GUyvnYrhcpHpgxoHRfnOrqhKA=' 'sha256-TktYGtmaIC58Duyr/gayH5OQImdSQjuJuLj2Q3JAS1M=' 'sha256-9TAcnEfJiFFNlBazae7jEs7kPBdrTsS0n5fzAi4yyVg=' 'sha256-KBtwu31m8sbUa/NPjuyJ0ttThXxWR7jXHevGAVJn1BQ='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob:; connect-src 'self'; upgrade-insecure-requests"/>
+<meta name="referrer" content="strict-origin-when-cross-origin"/>
+
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta content="مختبر ابن النفيس — موقع التعاون المختبري Lab to Lab للمختبرات المتعاونة: دليل الفحوصات والباقات والأسعار وطلبات التعاون." name="description"/>
 <meta content="index, follow" name="robots"/>
@@ -2069,6 +2072,15 @@ button:focus-visible,a:focus-visible{outline:3px solid rgba(17,132,157,.35)!impo
 }
 </style>
 
+<style id="ibn-test-price-add-alignment">
+  #testsGrid .test-item{align-items:center;gap:12px;min-width:0}
+  #testsGrid .test-info{flex:1 1 auto;min-width:0}
+  #testsGrid .test-info h4{overflow-wrap:anywhere;line-height:1.55}
+  #testsGrid .test-action{display:flex;flex:0 0 auto;flex-direction:row;align-items:center;justify-content:flex-end;gap:7px;white-space:nowrap}
+  #testsGrid .test-price{font-size:.86rem;white-space:nowrap}
+  #testsGrid .add-test-btn{padding:6px 10px;white-space:nowrap}
+  @media(max-width:420px){#testsGrid .test-item{gap:7px;padding:10px}#testsGrid .test-action{gap:5px}#testsGrid .test-price{font-size:.78rem}#testsGrid .add-test-btn{font-size:.75rem;padding:5px 7px}}
+</style>
 </head>
 <body>
 <header>
@@ -2139,7 +2151,7 @@ button:focus-visible,a:focus-visible{outline:3px solid rgba(17,132,157,.35)!impo
 <!-- Lab-to-Lab order details -->
 <section id="lab-order-details" style="margin:24px 0;padding:20px;border:1px solid #c6dce9;border-radius:22px;background:#f8fcff">
 <div class="section-header"><span class="section-pill">إكمال طلب المختبر المتعاون</span><h2>بيانات المختبر والطلب</h2><p>أكمل بيانات مختبرك قبل إرسال الطلب عبر واتساب.</p></div>
-<div class="form-card" style="padding:18px"><div class="lab-help-note" role="note">راجع المختارات والمجموع التقديري قبل الإرسال. الفاتورة للتوثيق الأولي فقط، ويُعتمد الطلب بعد تأكيد مختبر ابن النفيس.</div>
+<div class="form-card" style="padding:18px"><div class="lab-help-note" role="note">راجع المختارات والمجموع الكلي قبل الإرسال. الفاتورة للتوثيق الأولي فقط، ويُعتمد الطلب بعد تأكيد مختبر ابن النفيس.</div>
 <div class="form-group"><label for="labPartnerName">اسم المختبر المتعاون *</label><input id="labPartnerName" placeholder="اكتب اسم المختبر" style="width:100%;padding:14px;border-radius:12px;border:1px solid #cbd5e1" type="text"/></div>
 <div class="form-group"><label for="labPartnerPhone">رقم هاتف المختبر للتواصل *</label><input id="labPartnerPhone" placeholder="07xxxxxxxxx" style="width:100%;padding:14px;border-radius:12px;border:1px solid #cbd5e1" type="tel"/></div>
 <div class="form-group"><label for="orderPatientName">اسم المريض *</label><input id="orderPatientName" placeholder="اسم المريض الكامل" style="width:100%;padding:14px;border-radius:12px;border:1px solid #cbd5e1" type="text"/></div>
@@ -2182,16 +2194,23 @@ button:focus-visible,a:focus-visible{outline:3px solid rgba(17,132,157,.35)!impo
 </footer>
 <style>
 .smart-basket-panel{display:none;max-width:1160px;margin:8px auto 0;padding:12px 14px;border-radius:14px;background:#fff;color:#12344d;border:1px solid #9dc9e4;max-height:38vh;overflow:auto}.smart-basket-panel.open{display:block}.smart-basket-panel h3{font-size:1rem;margin-bottom:8px;color:#124d7c}.smart-basket-row{display:flex;justify-content:space-between;gap:10px;padding:7px 0;border-bottom:1px solid #e5eef4;font-size:.86rem}.smart-basket-row:last-child{border-bottom:0}.smart-basket-warning{margin:8px 0;padding:9px 11px;background:#fff7df;border:1px solid #f2d18b;color:#78500a;border-radius:10px;font-size:.82rem}.smart-basket-toggle{background:#dceeff;color:#174d78;border:1px solid #9dc9e4;border-radius:10px;padding:8px 12px;font-weight:800;cursor:pointer}.smart-basket-panel .remove-smart-item{background:#fee2e2;color:#991b1b;border:0;border-radius:8px;padding:3px 8px;font-weight:bold;cursor:pointer}@media(max-width:600px){.smart-basket-row{font-size:.8rem;flex-wrap:wrap}}
+
+.calc-actions #barSendWaBtn{border:0;border-radius:10px;padding:8px 12px;font-weight:800;cursor:pointer;background:#16845b;color:#fff}
+.calc-actions #confirmOrderSentBtn{background:#e4f5eb;color:#17633f;border:1px solid #a9d9bd;border-radius:10px;padding:8px 12px;font-weight:800;cursor:pointer}
+.calc-actions [hidden]{display:none!important}
+@media(max-width:600px){.calc-actions{display:flex;flex-wrap:wrap;gap:7px}.calc-actions button{font-size:.78rem}}
 </style>
 <!-- Floating Bottom Calculator Bar -->
 <div class="calc-bar" id="calcBar">
 <div class="calc-inner">
 <div class="calc-summary">
-      المحدد: <strong id="selectedCount">0</strong> عنصر | المجموع التقديري: <span id="selectedTotal">0</span> د.ع
+      المحدد: <strong id="selectedCount">0</strong> عنصر | المجموع الكلي: <span id="selectedTotal">0</span> د.ع
     </div>
 <div class="calc-actions">
 <button class="smart-basket-toggle" id="smartBasketToggle" type="button">مراجعة المختارات</button>
 <button class="btn-clear" id="clearAllBtn" type="button">مسح الكل</button>
+<button class="btn-whatsapp" id="barSendWaBtn" type="button">📲 إرسال عبر واتساب</button>
+<button class="btn-clear" id="confirmOrderSentBtn" type="button" hidden>✓ تم الإرسال — مسح المختارات</button>
 
 </div>
 </div>
@@ -2609,7 +2628,7 @@ button:focus-visible,a:focus-visible{outline:3px solid rgba(17,132,157,.35)!impo
     var warning=document.createElement('div');warning.className='smart-basket-warning';
     if(dup.length){var strong=document.createElement('strong');strong.textContent='تنبيه التداخل: ';warning.appendChild(strong);warning.appendChild(document.createTextNode(dup.length+' فحص فردي مختار أيضاً ضمن إحدى الباقات (معلّم أعلاه). لا تُحذف ولا تُخصم تلقائياً؛ اضغط إزالة بجانب الفحص إذا لا تريد طلبه منفرداً. '));}
     warning.appendChild(document.createTextNode('الأسعار لا تُعدّل تلقائياً حتى لا نغيّر تسعيرة المختبر بدون تأكيد.'));panel.appendChild(warning);
-    var total=document.createElement('strong');total.textContent='المجموع التقديري: '+formatNum(built.total)+' د.ع';panel.appendChild(total);
+    var total=document.createElement('strong');total.textContent='المجموع الكلي: '+formatNum(built.total)+' د.ع';panel.appendChild(total);
   }
 
   function syncAllUI() {
@@ -2696,6 +2715,31 @@ button:focus-visible,a:focus-visible{outline:3px solid rgba(17,132,157,.35)!impo
     return true;
   }
 
+  var pendingSendKey = "ibnAlnafisPendingWhatsAppSend_v1";
+  function showSentConfirmation() {
+    try { localStorage.setItem(pendingSendKey, "1"); } catch(e) {}
+    var confirmBtn = document.getElementById("confirmOrderSentBtn");
+    if (confirmBtn) confirmBtn.hidden = false;
+  }
+  function restoreSentConfirmation() {
+    try {
+      var confirmBtn = document.getElementById("confirmOrderSentBtn");
+      if (confirmBtn && localStorage.getItem(pendingSendKey) === "1") confirmBtn.hidden = false;
+    } catch(e) {}
+  }
+  function confirmOrderSentAndClear() {
+    if (!window.confirm("تأكدت أن الرسالة انرسلت فعلاً عبر واتساب؟ سيتم مسح الفحوصات المختارة.")) return;
+    try { localStorage.removeItem(pendingSendKey); } catch(e) {}
+    var confirmBtn = document.getElementById("confirmOrderSentBtn");
+    if (confirmBtn) confirmBtn.hidden = true;
+    clearAllSelected();
+    var extra = document.getElementById("unlistedTestsInput"); if (extra) extra.value = "";
+    var notes = document.getElementById("patientNotes"); if (notes) notes.value = "";
+    var status = document.getElementById("statusNote");
+    if (status) status.textContent = "✓ تم تأكيد الإرسال ومسح المختارات. يمكنك بدء طلب جديد.";
+    refreshPreview();
+  }
+
   function handleSendOrder() {
     var labNameEl = document.getElementById("labPartnerName");
     var labPhoneEl = document.getElementById("labPartnerPhone");
@@ -2725,10 +2769,11 @@ button:focus-visible,a:focus-visible{outline:3px solid rgba(17,132,157,.35)!impo
         title: "طلب فحص مختبري - مختبر ابن النفيس",
         text: built.text
       }).then(function() {
-        if (statusEl) statusEl.textContent = "✓ تمت مشاركة الملفات. إذا اخترت واتساب من قائمة المشاركة، تأكد من ظهور الصور قبل الإرسال.";
+        showSentConfirmation();
+        if (statusEl) statusEl.textContent = "تم فتح المشاركة. بعد إرسال الرسالة فعلياً عبر واتساب، ارجع واضغط (تم الإرسال — مسح المختارات).";
       }).catch(function() {
         notifyManualImageAttach();
-        openWhatsAppWithText(built.text);
+        if (openWhatsAppWithText(built.text)) showSentConfirmation();
       });
       return;
     }
@@ -2736,7 +2781,8 @@ button:focus-visible,a:focus-visible{outline:3px solid rgba(17,132,157,.35)!impo
     if (attachedFiles.length > 0) {
       notifyManualImageAttach();
     }
-    openWhatsAppWithText(built.text);
+    var opened = openWhatsAppWithText(built.text);
+    if (opened) showSentConfirmation();
     if (statusEl && attachedFiles.length === 0) {
       statusEl.textContent = "✓ تم تجهيز الطلب وفتح رابط واتساب للرقم 07747905954. الموعد غير مؤكد إلا بعد رد المختبر.";
     }
@@ -2774,10 +2820,15 @@ button:focus-visible,a:focus-visible{outline:3px solid rgba(17,132,157,.35)!impo
     var grp = document.getElementById("quickTestsOptGroup");
     if (!grp) return;
     var opts = "";
+    function escapeOptionText(value) {
+      return String(value == null ? "" : value).replace(/[&<>"']/g, function(ch) {
+        return {"&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;"}[ch];
+      });
+    }
     for (var i = 0; i < testsData.length; i++) {
       var t = testsData[i];
       var pLabel = t.price === 0 ? "مجاني" : formatNum(t.price) + " د.ع";
-      opts += '<option value="test:' + t.id + '">' + t.ar + ' (' + t.en + ') - ' + pLabel + '</option>';
+      opts += '<option value="test:' + Number(t.id) + '">' + escapeOptionText(t.ar) + ' (' + escapeOptionText(t.en) + ') - ' + escapeOptionText(pLabel) + '</option>';
     }
     grp.innerHTML = opts;
   }
@@ -2906,6 +2957,9 @@ button:focus-visible,a:focus-visible{outline:3px solid rgba(17,132,157,.35)!impo
 
   var clearBtn = document.getElementById("clearAllBtn");
   if (clearBtn) clearBtn.addEventListener("click", clearAllSelected);
+  var confirmSentBtn = document.getElementById("confirmOrderSentBtn");
+  if (confirmSentBtn) confirmSentBtn.addEventListener("click", confirmOrderSentAndClear);
+  restoreSentConfirmation();
 
 
 
@@ -3089,7 +3143,7 @@ button:focus-visible,a:focus-visible{outline:3px solid rgba(17,132,157,.35)!impo
   var symptomGuideData={
     fatigue:{title:'التعب والإرهاق',ids:[40,41,42,5,54,7]},hair:{title:'تساقط الشعر',ids:[40,41,42,54,7,8]},sugar:{title:'متابعة السكر',ids:[5,6,74,75,76]},thyroid:{title:'الغدة الدرقية',ids:[54,55,56,57,58,59,60]},women:{title:'صحة المرأة والدورة',ids:[62,63,64,65,67,69,70,71]},urinary:{title:'أعراض بولية',ids:[16,17,11,12,14,15]},digestive:{title:'أعراض هضمية',ids:[86,87,88,93,94,2,3]},heart:{title:'متابعة القلب والدهون',ids:[36,37,38,39,53,5]}};
   var symptomModal=document.createElement('div');symptomModal.className='symptom-guide-modal';symptomModal.innerHTML='<div class="symptom-guide-dialog" role="dialog" aria-modal="true"><h3 id="symptomGuideTitle"></h3><p>هذه قائمة استكشافية تثقيفية فقط؛ اختيار الفحص يعتمد على التاريخ الصحي والفحص السريري وتوجيه الطبيب.</p><div class="symptom-guide-list" id="symptomGuideList"></div><button class="symptom-guide-close" type="button">إغلاق</button></div>';document.body.appendChild(symptomModal);
-  document.querySelectorAll('[data-symptom]').forEach(function(btn){btn.addEventListener('click',function(){var d=symptomGuideData[btn.dataset.symptom];if(!d)return;document.getElementById('symptomGuideTitle').textContent=d.title;var list=document.getElementById('symptomGuideList');list.innerHTML='';d.ids.forEach(function(id){var t=getTestById(id);if(!t)return;var row=document.createElement('div');row.className='symptom-guide-test';var label=document.createElement('div');label.innerHTML='<strong>'+t.ar+'</strong><br><small>'+t.en+'</small>';var add=document.createElement('button');add.type='button';add.textContent='عرض الفحص';add.addEventListener('click',function(){var card=document.getElementById('test-card-'+id);if(card){document.getElementById('tests').scrollIntoView({behavior:'smooth'});var search=document.getElementById('testSearch');if(search){search.value=t.en;search.dispatchEvent(new Event('input',{bubbles:true}));}setTimeout(function(){card.scrollIntoView({behavior:'smooth',block:'center'});},350);}symptomModal.classList.remove('show');});row.appendChild(label);row.appendChild(add);list.appendChild(row);});symptomModal.classList.add('show');});});
+  document.querySelectorAll('[data-symptom]').forEach(function(btn){btn.addEventListener('click',function(){var d=symptomGuideData[btn.dataset.symptom];if(!d)return;document.getElementById('symptomGuideTitle').textContent=d.title;var list=document.getElementById('symptomGuideList');list.innerHTML='';d.ids.forEach(function(id){var t=getTestById(id);if(!t)return;var row=document.createElement('div');row.className='symptom-guide-test';var label=document.createElement('div');label.innerHTML='<strong>'+String(t.ar||'').replace(/[&<>\"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',"'":'&#39;'}[c];})+'</strong><br><small>'+String(t.en||'').replace(/[&<>\"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',"'":'&#39;'}[c];})+'</small>';var add=document.createElement('button');add.type='button';add.textContent='عرض الفحص';add.addEventListener('click',function(){var card=document.getElementById('test-card-'+id);if(card){document.getElementById('tests').scrollIntoView({behavior:'smooth'});var search=document.getElementById('testSearch');if(search){search.value=t.en;search.dispatchEvent(new Event('input',{bubbles:true}));}setTimeout(function(){card.scrollIntoView({behavior:'smooth',block:'center'});},350);}symptomModal.classList.remove('show');});row.appendChild(label);row.appendChild(add);list.appendChild(row);});symptomModal.classList.add('show');});});
   symptomModal.addEventListener('click',function(e){if(e.target===symptomModal||e.target.classList.contains('symptom-guide-close'))symptomModal.classList.remove('show');});
 
   // Initialize
@@ -3319,7 +3373,7 @@ button:focus-visible,a:focus-visible{outline:3px solid rgba(17,132,157,.35)!impo
         var rowsHtml=rows.map(function(r,i){return '<tr><td>'+(i+1)+'</td><td>'+esc(r.type)+'</td><td>'+esc(r.name)+'</td><td>'+esc(r.price)+'</td></tr>';}).join('');
         var win=window.open('','_blank','width=900,height=760');
         if(!win){alert('يرجى السماح بالنوافذ المنبثقة حتى تتمكن من طباعة الملخص.');return;}
-        var doc='<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><title>ملخص طلب — مختبر ابن النفيس</title><style>body{font-family:Arial,sans-serif;color:#172033;margin:28px;line-height:1.7}h1{margin:0;color:#0a58ca;font-size:24px}.sub{color:#64748b;margin:4px 0 22px}.meta{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:18px 0}.meta div{padding:9px 12px;border:1px solid #dbe3ec;border-radius:8px}table{border-collapse:collapse;width:100%;margin-top:16px}th,td{border:1px solid #dbe3ec;padding:9px;text-align:right}th{background:#eff6ff}.total{margin-top:16px;font-size:19px;font-weight:bold;color:#0a58ca}.warning{margin-top:22px;padding:12px;background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;font-size:13px}.foot{margin-top:26px;color:#64748b;font-size:12px}@media print{body{margin:12mm}button{display:none}}</style></head><body><h1>مختبر ابن النفيس</h1><div class="sub">ملخص طلب تعاون مختبري — Lab to Lab</div><div>تاريخ الطباعة: '+esc(new Date().toLocaleString('ar-IQ'))+'</div><div class="meta"><div><b>المختبر المتعاون:</b> '+esc(lab||'—')+'</div><div><b>رقم التواصل:</b> '+esc(phone||'—')+'</div><div><b>اسم المريض:</b> '+esc(patient||'—')+'</div><div><b>العمر:</b> '+esc(age||'—')+' &nbsp; <b>الجنس:</b> '+esc(sex||'—')+'</div></div><table><thead><tr><th>#</th><th>النوع</th><th>الفحص / الباقة</th><th>السعر</th></tr></thead><tbody>'+rowsHtml+(extra.trim()?'<tr><td>—</td><td>إضافة</td><td>'+esc(extra.trim())+'</td><td>يحدد لاحقاً</td></tr>':'')+'</tbody></table><div class="total">المجموع التقديري: '+esc(total)+' د.ع</div><div class="warning">هذا ملخص أولي للطلب وليس فاتورة نهائية أو تأكيداً لاستلام العينة. تُراجع الأسعار ووقت الإنجاز وتعليمات العينة مع مختبر ابن النفيس.</div><div class="foot">مختبر ابن النفيس — بعقوبة — هاتف: 07747905954</div><script>window.onload=function(){window.focus();window.print();};<\/script>';
+        var doc='<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><title>ملخص طلب — مختبر ابن النفيس</title><style>body{font-family:Arial,sans-serif;color:#172033;margin:28px;line-height:1.7}h1{margin:0;color:#0a58ca;font-size:24px}.sub{color:#64748b;margin:4px 0 22px}.meta{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:18px 0}.meta div{padding:9px 12px;border:1px solid #dbe3ec;border-radius:8px}table{border-collapse:collapse;width:100%;margin-top:16px}th,td{border:1px solid #dbe3ec;padding:9px;text-align:right}th{background:#eff6ff}.total{margin-top:16px;font-size:19px;font-weight:bold;color:#0a58ca}.warning{margin-top:22px;padding:12px;background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;font-size:13px}.foot{margin-top:26px;color:#64748b;font-size:12px}@media print{body{margin:12mm}button{display:none}}</style></head><body><h1>مختبر ابن النفيس</h1><div class="sub">ملخص طلب تعاون مختبري — Lab to Lab</div><div>تاريخ الطباعة: '+esc(new Date().toLocaleString('ar-IQ'))+'</div><div class="meta"><div><b>المختبر المتعاون:</b> '+esc(lab||'—')+'</div><div><b>رقم التواصل:</b> '+esc(phone||'—')+'</div><div><b>اسم المريض:</b> '+esc(patient||'—')+'</div><div><b>العمر:</b> '+esc(age||'—')+' &nbsp; <b>الجنس:</b> '+esc(sex||'—')+'</div></div><table><thead><tr><th>#</th><th>النوع</th><th>الفحص / الباقة</th><th>السعر</th></tr></thead><tbody>'+rowsHtml+(extra.trim()?'<tr><td>—</td><td>إضافة</td><td>'+esc(extra.trim())+'</td><td>يحدد لاحقاً</td></tr>':'')+'</tbody></table><div class="total">المجموع الكلي: '+esc(total)+' د.ع</div><div class="warning">هذا ملخص أولي للطلب وليس فاتورة نهائية أو تأكيداً لاستلام العينة. تُراجع الأسعار ووقت الإنجاز وتعليمات العينة مع مختبر ابن النفيس.</div><div class="foot">مختبر ابن النفيس — بعقوبة — هاتف: 07747905954</div><script>window.onload=function(){window.focus();window.print();};<\/script>';
         win.document.open();win.document.write(doc);win.document.close();
       });
     }
@@ -3409,7 +3463,7 @@ button:focus-visible,a:focus-visible{outline:3px solid rgba(17,132,157,.35)!impo
       html+='<div class="invoice-empty">لم تتم إضافة فحوصات أو باقات بعد. اختر الفحوصات من الأعلى وستظهر هنا مباشرة.</div>';
       if(extra)html+='<div class="invoice-meta-item" style="margin-top:9px"><b>فحوصات إضافية:</b> '+safe(extra)+' — السعر يحدد لاحقاً</div>';
     }
-    html+='<div class="invoice-total-row"><span>المجموع التقديري</span><strong>'+safe(money(total))+'</strong></div>';
+    html+='<div class="invoice-total-row"><span>المجموع الكلي</span><strong>'+safe(money(total))+'</strong></div>';
     preview.innerHTML=html;
   }
   function gatherInvoice(){
@@ -3421,7 +3475,7 @@ button:focus-visible,a:focus-visible{outline:3px solid rgba(17,132,157,.35)!impo
     msg+='المختبر المتعاون: '+(txt('labPartnerName')||'—')+'\nهاتف المختبر: '+(txt('labPartnerPhone')||'—')+'\n';
     msg+='اسم المريض: '+(txt('orderPatientName')||'—')+'\nالعمر: '+(txt('orderPatientAge')||'—')+'\nالجنس: '+(txt('orderPatientSex')||'—')+'\n\n';
     msg+='الفحوصات والباقات:\n'+(lines.length?lines.join('\n'):'لم تتم إضافة فحوصات بعد.')+'\n\n';
-    msg+='المجموع التقديري: '+money(invoiceTotal())+'\n';
+    msg+='المجموع الكلي: '+money(invoiceTotal())+'\n';
     if(txt('patientNotes'))msg+='ملاحظات: '+txt('patientNotes')+'\n';
     var files=document.getElementById('prescriptionFileInput');
     if(files&&files.files&&files.files.length)msg+='ملاحظة: توجد '+files.files.length+' صورة مرفقة؛ يرجى إرفاقها يدوياً في محادثة واتساب بعد فتحها.\n';
@@ -3493,7 +3547,7 @@ button:focus-visible,a:focus-visible{outline:3px solid rgba(17,132,157,.35)!impo
           '<div><b>العمر / الجنس:</b> '+safe(txt('orderPatientAge')||'—')+' / '+safe(txt('orderPatientSex')||'—')+'</div>'+
         '</section>'+
         '<table><thead><tr><th style="width:7%">#</th><th style="width:17%">النوع</th><th>الفحص / الباقة</th><th style="width:20%">السعر</th></tr></thead><tbody>'+rows+'</tbody></table>'+
-        '<div class="total"><span>المجموع التقديري</span><span>'+safe(money(invoiceTotal()))+'</span></div>'+
+        '<div class="total"><span>المجموع الكلي</span><span>'+safe(money(invoiceTotal()))+'</span></div>'+
         (txt('patientNotes')?'<div class="notes"><b>ملاحظات:</b><br>'+safe(txt('patientNotes'))+'</div>':'')+
         '<div class="foot">مختبر ابن النفيس — بعقوبة الجديدة، تقاطع نهر الحجية، قرب مرطبات فانيلا — 07747905954</div>'+
       '</div>';
@@ -3563,8 +3617,14 @@ button:focus-visible,a:focus-visible{outline:3px solid rgba(17,132,157,.35)!impo
     if(!waTab){window.location.href=url;}
     setInvoiceStatus('تم فتح محادثة واتساب للمختبر المتعاون مع تفاصيل الطلب جاهزة. راجع الرسالة واضغط إرسال.');
   }
+  // Keep one consistent send flow: both WhatsApp buttons open the prepared order
+  // to Ibn Al-Nafis Lab (the fixed receiving number) and use the same confirmation.
   var waButton=document.getElementById('invoiceWhatsAppBtn');
-  if(waButton)waButton.addEventListener('click',sendInvoiceWhatsApp);
+  if(waButton)waButton.addEventListener('click',function(){
+    var mainSendButton=document.getElementById('barSendWaBtn');
+    if(mainSendButton)mainSendButton.click();
+    else sendInvoiceWhatsApp();
+  });
   // Deleting a line on the invoice unselects the same test/package everywhere in the page.
   document.addEventListener('click',function(e){
     var rm=e.target.closest?e.target.closest('[data-invoice-remove]'):null;
@@ -3690,12 +3750,3 @@ button:focus-visible,a:focus-visible{outline:3px solid rgba(17,132,157,.35)!impo
 
 </body>
 </html>
-<style id="ibn-test-price-add-alignment">
-  #testsGrid .test-item{align-items:center;gap:12px;min-width:0}
-  #testsGrid .test-info{flex:1 1 auto;min-width:0}
-  #testsGrid .test-info h4{overflow-wrap:anywhere;line-height:1.55}
-  #testsGrid .test-action{display:flex;flex:0 0 auto;flex-direction:row;align-items:center;justify-content:flex-end;gap:7px;white-space:nowrap}
-  #testsGrid .test-price{font-size:.86rem;white-space:nowrap}
-  #testsGrid .add-test-btn{padding:6px 10px;white-space:nowrap}
-  @media(max-width:420px){#testsGrid .test-item{gap:7px;padding:10px}#testsGrid .test-action{gap:5px}#testsGrid .test-price{font-size:.78rem}#testsGrid .add-test-btn{font-size:.75rem;padding:5px 7px}}
-</style>
